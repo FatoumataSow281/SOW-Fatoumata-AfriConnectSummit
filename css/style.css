@@ -692,3 +692,60 @@ tbody tr:hover {
   opacity: 0.8;
 }
 
+/* ===== SPEAKERS FILTER ===== */
+.speakers-filter {
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-xl);
+}
+
+.filter-btn {
+  padding: 0.6rem 1.4rem;
+  border: 2px solid var(--color-secondary);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.filter-btn.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ===== SPEAKERS GRID FULL (page intervenants) ===== */
+.speakers-grid-full {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.speakers-grid-full .speaker-card {
+  cursor: pointer;
+}
+
+.speakers-grid-full .speaker-card img {
+  height: 240px;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Classe utilisée par le JS de filtrage pour masquer les cartes non correspondantes */
+.speaker-card.hidden {
+  display: none;
+}
