@@ -34,6 +34,10 @@
 <main>
 
     <section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="videos/hero-background.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
         <h1>AfriConnect Summit 2026</h1>
         <p class="hero-subtitle">Dakar, Sénégal · 12 - 14 Novembre 2026</p>
 
@@ -64,7 +68,7 @@
 
 </main>
 
-<section class="stats">
+<section class="stats reveal">
   <h2 class="sr-only">Chiffres clés</h2>
 
   <div class="stats-grid">
@@ -90,7 +94,7 @@
   </div>
 </section>
 
-<section class="why-attend">
+<section class="why-attend reveal">
   <h2>Pourquoi participer ?</h2>
 
   <div class="why-attend-grid">
@@ -114,7 +118,7 @@
   </div>
 </section>
 
-<section class="featured-speakers">
+<section class="featured-speakers reveal">
   <h2>Intervenants vedettes</h2>
 
   <div class="speakers-grid">
@@ -147,34 +151,50 @@
     </article>
   </div>
 
-  <a href="intervenants.html" class="btn btn-secondary">Voir tous les intervenants</a>
+<a href="intervenants.html" class="btn btn-outline">Voir tous les intervenants</a>
 </section>
 
-  <section class="sponsors">
+<section class="sponsors reveal">
   <h2>Nos sponsors</h2>
 
-  <div class="sponsors-tier">
-    <h3>Sponsor Or</h3>
-    <div class="sponsors-row sponsors-gold">
-      <span class="sponsor-name">TechAfrica Group</span>
-    </div>
-  </div>
+  <div class="sponsor-tiers">
 
-  <div class="sponsors-tier">
-    <h3>Sponsors Argent</h3>
-    <div class="sponsors-row sponsors-silver">
-      <span class="sponsor-name">PanAfrican Bank</span>
-      <span class="sponsor-name">Sahel Ventures</span>
+    <div class="tier-panel tier-gold">
+      <span class="tier-badge">Sponsor Or</span>
+      <div class="tier-logos">
+        <div class="sponsor-logo">
+          <img src="images/images.png" alt="Logo du sponsor Or : TechAfrica Group">
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="sponsors-tier">
-    <h3>Sponsors Bronze</h3>
-    <div class="sponsors-row sponsors-bronze">
-      <span class="sponsor-name">Dakar Coworking</span>
-      <span class="sponsor-name">InnovHub</span>
-      <span class="sponsor-name">StartUp Sénégal</span>
+    <div class="tier-panel tier-silver">
+      <span class="tier-badge">Sponsors Argent</span>
+      <div class="tier-logos">
+        <div class="sponsor-logo">
+          <img src="images/images (2).jpg" alt="Logo du sponsor Argent : Ecobank">
+        </div>
+        <div class="sponsor-logo">
+          <img src="images/images (1).png" alt="Logo du sponsor Argent : Sahel Développement">
+        </div>
+      </div>
     </div>
+
+    <div class="tier-panel tier-bronze">
+      <span class="tier-badge">Sponsors Bronze</span>
+      <div class="tier-logos">
+        <div class="sponsor-logo">
+          <img src="images/geometric-coworking-logo-vector-24745047.avif" alt="Logo du sponsor Bronze : Coworking Space">
+        </div>
+        <div class="sponsor-logo">
+          <img src="images/images (3).jpg" alt="Logo du sponsor Bronze : InnovHub">
+        </div>
+        <div class="sponsor-logo">
+          <img src="images/logo_scs_officiel.png" alt="Logo du sponsor Bronze : StartUp Sénégal">
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -216,6 +236,7 @@
     <i class="bi bi-arrow-up"></i>
   </button>
 </footer>
+<script src="js/main.js"></script>
 
 </body>
 </html>

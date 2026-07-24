@@ -390,54 +390,111 @@ header#navbar nav {
   font-size: 2rem;
 }
 
-.sponsors-tier {
-  margin-bottom: var(--spacing-lg);
-}
-
-.sponsors-tier h3 {
-  margin-bottom: var(--spacing-md);
-  font-size: 1.1rem;
-  opacity: 0.7;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.sponsors-row {
+.sponsor-tiers {
   display: flex;
+  flex-direction: column;
   gap: var(--spacing-lg);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tier-panel {
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 5px solid;
+  padding: var(--spacing-lg);
+  background: var(--color-light-bg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.tier-gold {
+  border-top-color: #D4AF37;
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.tier-silver {
+  border-top-color: #A8A9AD;
+}
+
+.tier-bronze {
+  border-top-color: #CD7F32;
+}
+
+.tier-badge {
+  display: inline-block;
+  margin-bottom: var(--spacing-lg);
+  padding: 0.3rem 1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tier-gold .tier-badge {
+  background: rgba(212, 175, 55, 0.15);
+  color: #9c7a1e;
+}
+
+.tier-silver .tier-badge {
+  background: rgba(168, 169, 173, 0.2);
+  color: #6b6c6f;
+}
+
+.tier-bronze .tier-badge {
+  background: rgba(205, 127, 50, 0.15);
+  color: #8a5522;
+}
+
+.tier-logos {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: var(--spacing-lg);
 }
 
-.sponsor-name {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--color-secondary);
-  padding: var(--spacing-md) var(--spacing-lg);
-  border-radius: var(--radius-sm);
-  background: var(--color-light-bg);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+.sponsor-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform var(--transition-speed);
 }
 
-.sponsor-name:hover {
-  transform: scale(1.05);
+.sponsor-logo:hover {
+  transform: scale(1.06);
 }
 
-.sponsors-gold .sponsor-name {
-  font-size: 1.6rem;
-  color: var(--color-primary);
+.sponsor-logo img {
+  display: block;
+  width: auto;
+  object-fit: contain;
 }
 
-.sponsors-silver .sponsor-name {
-  font-size: 1.2rem;
+.tier-gold .sponsor-logo img {
+  height: 150px;
+  max-width: 400px;
 }
 
-.sponsors-bronze .sponsor-name {
-  font-size: 0.95rem;
+.tier-silver .sponsor-logo img {
+  height: 110px;
+  max-width: 320px;
 }
 
+.tier-bronze .sponsor-logo img {
+  height: 75px;
+  max-width: 240px;
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--color-light-text);
+  color: var(--color-light-text);
+}
+
+.btn-outline:hover {
+  background: var(--color-light-text);
+  color: var(--color-light-bg);
+}
 /* ===== FOOTER ===== */
 footer {
   background: var(--color-secondary);
@@ -740,7 +797,7 @@ tbody tr:hover {
 }
 
 .speakers-grid-full .speaker-card img {
-  height: 240px;
+  height: 340px;
   object-fit: cover;
   object-position: top;
 }
@@ -1023,6 +1080,10 @@ tbody tr:hover {
     grid-template-columns: 1fr;
   }
 
+  .speakers-grid-full .speaker-card img {
+    height: 260px;
+  }
+
   .speakers-grid {
     grid-template-columns: 1fr;
   }
@@ -1053,4 +1114,53 @@ tbody tr:hover {
     bottom: 20px;
     right: 20px;
   }
+}
+
+/* ===== ANIMATIONS AU SCROLL (utilisées par IntersectionObserver) ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  /* garde le reste de tes propriétés .hero existantes (min-height, display flex, etc.) */
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(27, 27, 58, 0.75), rgba(255, 107, 53, 0.6));
+  z-index: 1;
+}
+
+.hero h1,
+.hero-subtitle,
+.hero-buttons,
+.countdown {
+  position: relative;
+  z-index: 2;
 }
